@@ -55,11 +55,15 @@ public class MainController {
   }
 
   // description: @PathVariable - Path 자체를 변수의 값으로 인식 //
+  // description: {variable} 로 표현 -> @PathVariable("variable") //
   @GetMapping("/path-variable/{value}")
   public String getPathVariable(@PathVariable("value") String value) {
     return "입력한 Path Variable은 " + value + " 입니다.";
   }
 
+  // description: @RequestParam - Query Parameter로 key와 value를 받아옴 //
+  // description: 요청시 ?name1=value&name2=value2... //
+  // description: @RequestParam("name1") //
   @GetMapping("/parameter")
   public String getParameter(
     @RequestParam("name") String name,
@@ -68,6 +72,9 @@ public class MainController {
     return "이름 : " + name + " 나이 " + age;
   }
 
+  // description: @RequestBody - Request Body에 포함된 데이터를 받아옴, 문자열 혹은 객체로 받을 수 있음 //
+  // description: 요청 시 일반적으로 JSON 형태로 Request Body를 전송 //
+  // description: @RequestBody //
   @PostMapping("/request-body")
   public String postRequestBody(
     // @RequestBody String requestBody
