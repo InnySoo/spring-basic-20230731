@@ -16,6 +16,8 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.sooin.basic.dto.request.PostRequestBodyDto;
+import com.sooin.basic.service.MainService;
+import com.sooin.basic.service.implement.MainServiceImplement;
 
 // description: Controller - 레이어드 아키텍터 상의 프레젠테이션 영역 //
 // description: 사용자로부터 입력을 받고 서비스 결과를 반환하는 영역 //
@@ -28,10 +30,16 @@ import com.sooin.basic.dto.request.PostRequestBodyDto;
 @RequestMapping("")
 public class MainController {
 
+  private MainService mainService;
+
+  public MainController(MainService mainService) {
+    this.mainService = mainService;
+  }
+
   // description: @RequestMapping 중 Get method에 대해서만 인식 //
   @GetMapping("/")
   public String getMethod() {
-    return "get method";
+    return mainService.hello();
   }
 
   // description: @RequestMapping 중 Post method에 대해서만 인식 //
