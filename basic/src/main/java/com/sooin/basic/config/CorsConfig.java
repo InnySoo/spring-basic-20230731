@@ -8,11 +8,7 @@ import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 // description: 웹 브라우저에서 접근하는 다른 출처의 리소스에서 리소스에 접근하지 못하도록 하는 정책 //
 // description: Origin (출처) - 도메인, 프로토콜, 포트 //
 
-<<<<<<< HEAD
-// description: CORS 허용 - WebMvcConfigurer Spring 설정을 변경해야함 //
-=======
 // description: CORS 허용 - WebMvcConfigurer Spring 설정을 변경해야 함 //
->>>>>>> ab15a8a34791e75ce94e884337d6e1a8ddfe5550
 // description: @Configuration - Spring 설정 변경 어노테이션 //
 @Configuration
 public class CorsConfig implements WebMvcConfigurer {
@@ -21,16 +17,6 @@ public class CorsConfig implements WebMvcConfigurer {
   @Override
   public void addCorsMappings(CorsRegistry corsRegistry) {
     corsRegistry
-<<<<<<< HEAD
-    // description: mapping pattern 지정 //
-    .addMapping("/**")
-    // description: http method 지정 //
-    .allowedMethods("*")
-    // description: 출처 지정 //
-    .allowedOrigins("*");
-  }
-
-=======
       // description: mapping pattern 지정 //
       .addMapping("/**")
       // description: http method 지정 //
@@ -38,5 +24,4 @@ public class CorsConfig implements WebMvcConfigurer {
       // description: origin(출처) 지정 //
       .allowedOrigins("*");
   }
->>>>>>> ab15a8a34791e75ce94e884337d6e1a8ddfe5550
 }

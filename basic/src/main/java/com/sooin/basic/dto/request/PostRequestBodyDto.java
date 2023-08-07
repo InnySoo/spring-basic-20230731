@@ -15,9 +15,5 @@ public class PostRequestBodyDto {
   private String name;
   @NotNull
   private Integer age;
-<<<<<<< HEAD
-}
-=======
   
 }
->>>>>>> ab15a8a34791e75ce94e884337d6e1a8ddfe5550
